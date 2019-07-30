@@ -1,7 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 
-def draw_text(text, img_filename='test'):
-	font_size = 14
+def draw_text(text, font_size=14, img_filename='test'):
 	font = ImageFont.truetype("fonts/Helvetica-Normal.ttf", font_size)
 	im = Image.new('RGB', (200, font_size), color=(255, 255, 255))
 	draw = ImageDraw.Draw(im)
