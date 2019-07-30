@@ -18,6 +18,10 @@ def get_similar_domain_names(domain_name):
 		"v": ["u"],
 		"w": ["vv", "v"],
 	}
+
+	tld_substitutions = {
+		"com": ["co"]
+	}
 	# compute all relevant substitutions
 	similar_domain_names = []
 	for key in substitutions.keys():
@@ -25,6 +29,11 @@ def get_similar_domain_names(domain_name):
 			similar_domain_names += find_and_replace_all_occurrences(name, tld, key, value)
 	# also: double letters -> single letter
 	similar_domain_names += double_to_single_replacements(name, tld)
+	# tld substitutions
+	if tld in tld_substitutions:
+		for sub in tld_substitutions[tld]:
+			print(sub)
+			similar_domain_names.append(name + "." + sub)
 	return similar_domain_names
 
 
