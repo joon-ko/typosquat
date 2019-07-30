@@ -10,9 +10,8 @@ def get_domain_information(domain_name):
     """
     endpoint = 'https://entourage.dev.aws.godaddy.com/domainsapi/v1/search/exact?q={}'.format(domain_name)
     r = requests.get(endpoint)
-    rj = r.json()
-    available = rj['ExactMatchDomain']['IsAvailable']
-    valuation = rj['ExactMatchdomain']['Price'] if available else None
+    available = r.json()['ExactMatchDomain']['IsAvailable']
+    valuation = r.json()['ExactMatchDomain']['Price'] if available else None
     return (available, valuation)
 
 
