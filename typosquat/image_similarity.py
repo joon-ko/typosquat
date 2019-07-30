@@ -13,7 +13,7 @@ substitutions = {
 }
 
 # gets similarity score of between letter substitutions given that their png file exists in text_images/{letter}.png
-def get_similarity_score(substitutions)
+def get_similarity_score(substitutions):
 	scores = {}
 	for char in substitutions:
 		hash = imagehash.average_hash(Image.open('text_images/{}.png'.format(char)))
