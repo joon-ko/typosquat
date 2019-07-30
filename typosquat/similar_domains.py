@@ -32,7 +32,6 @@ def get_similar_domain_names(domain_name):
 	# tld substitutions
 	if tld in tld_substitutions:
 		for sub in tld_substitutions[tld]:
-			print(sub)
 			similar_domain_names.append(name + "." + sub)
 	return similar_domain_names
 

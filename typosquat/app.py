@@ -14,5 +14,4 @@ def ping():
 @app.route('/result', methods=['POST'])
 def result():
     domain_name = request.data.decode('utf-8')
-    print(domain_name)
     return jsonify(get_similar_domain_names(domain_name))
