@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import jsonify
 from flask import request
+from flask import url_for
 
 from typosquat.similar_domains import get_similar_domain_names
 
