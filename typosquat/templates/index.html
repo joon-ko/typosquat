@@ -9,6 +9,9 @@
 
 	<title>typosquat tool</title>
 
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+
 	<script src="../static/js/index.js"></script>
 
 </head>
@@ -28,7 +31,13 @@
 		<div id="" class="content-wrap--home">
 			<div id="content_homepage" class="content--home">
 				<div class="cw--c">
-					<div class="search-wrap--home">
+<!-- 					<div class="logo-wrap--home">
+						<a id="logo_homepage_link" class="logo_homepage" href="/about">
+							About DuckDuckGo
+							<span class="logo_homepage__tt">Learn More</span>
+						</a>
+					</div>
+ -->					<div class="search-wrap--home">
 						<form id="search_form_homepage" class="search  search--home  js-search-form" name="x" method="POST" action="javascript:;" onsubmit="jeff()">
 							<input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="1" value="">
 							<input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S" />

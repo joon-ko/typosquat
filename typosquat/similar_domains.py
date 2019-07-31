@@ -1,3 +1,20 @@
+import json
+
+scores = {('0', 'O'): 0.5, ('O', '0'): 0.5, ('c', 'o'): 0.8783783783783784, ('o', 'c'): 0.8783783783783784, 
+	('e', 'o'): 0.9324324324324325, ('o', 'e'): 0.9324324324324325, ('l', 'I'): 0.9864864864864865, ('I', 'l'): 0.9864864864864865, 
+	('l', '1'): 0.8108108108108107, ('1', 'l'): 0.8108108108108107, ('m', 'rn'): 0.9459459459459459, ('rn', 'm'): 0.9459459459459459, 
+	('m', 'n'): 0.6891891891891893, ('n', 'm'): 0.6891891891891893, ('t', 'l'): 0.7837837837837838, ('l', 't'): 0.7837837837837838, 
+	('u', 'v'): 0.7567567567567568, ('v', 'u'): 0.7567567567567568, ('w', 'vv'): 0.8918918918918919, ('vv', 'w'): 0.8918918918918919, 
+	('w', 'v'): 0.6756756756756757, ('v', 'w'): 0.6756756756756757}
+
+# Assuming Linux. Word list may also be at /usr/dict/words. 
+# If not on Linux, grab yourself an enlish word list and insert here:
+words = set(x.strip().lower() for x in open("/usr/share/dict/words").readlines())
+words -= set("bcdefghjklmnopqrtvwxyz")
+words -= set(("ex", "rs", "ra", "frobnicate"))
+
+common_typos = json.loads(open('typosquat/typos.json').read())
+
 def get_similar_domain_names(domain_name):
 	# if not check_domain_name_is_vaild(domain_name):
 		# return "invalid domain name"
@@ -23,17 +40,28 @@ def get_similar_domain_names(domain_name):
 		"com": ["co"]
 	}
 	# compute all relevant substitutions
-	similar_domain_names = []
+	similar_domain_names = {}
 	for key in substitutions.keys():
 		for value in substitutions[key]:
-			similar_domain_names += find_and_replace_all_occurrences(name, tld, key, value)
+			for occurrence in find_and_replace_all_occurrences(name, tld, key, value):
+				similar_domain_names[occurrence] = scores[(key, value)]
 	# also: double letters -> single letter
-	similar_domain_names += double_to_single_replacements(name, tld)
+	for occurrence in double_to_single_replacements(name, tld):
+		similar_domain_names[occurrence] = .5
+	
+	# common typos
+	for occurrence in common_typo_occurrences(name, tld):
+		if occurrence in similar_domain_names:
+			similar_domain_names[occurrence] += .5
+		else:
+			similar_domain_names[occurrence] = .5
+
 	# tld substitutions
 	if tld in tld_substitutions:
 		for sub in tld_substitutions[tld]:
-			similar_domain_names.append(name + "." + sub)
-	return similar_domain_names
+			similar_domain_names[name + "." + sub] = .5
+	#return similar_domain_names
+	return sorted(similar_domain_names, key=similar_domain_names.get, reverse=True)[:10]
 
 
 def find_and_replace_all_occurrences(name, tld, prev_substring, new_substring):
@@ -53,6 +81,31 @@ def double_to_single_replacements(name, tld):
 			new_string = name[:i] + name[i+1:]
 			domain_name_list.append(new_string + "." + tld)
 	return domain_name_list
+
+
+def common_typo_occurrences(name, tld):
+	
+	domain_name_list = []
+	split_strings = substrings_in_set(name, words)
+	replaced_words = set()
+
+	for list_strings in split_strings:
+		for i in range(len(list_strings)):
+			if list_strings[i] not in replaced_words and list_strings[i] in common_typos:
+				domain_name_list += [''.join(list_strings[:i]) + typo + ''.join(list_strings[i+1:]) + '.' + tld for typo in common_typos[list_strings[i]]]
+			replaced_words.add(list_strings[i])
+	
+	return domain_name_list
+
+
+def substrings_in_set(s, words):
+    if s in words:
+        yield [s]
+    for i in range(1, len(s)):
+        if s[:i] not in words and not s[:i].isdigit():
+            continue
+        for rest in substrings_in_set(s[i:], words):
+            yield [s[:i]] + rest
 
 
 def check_domain_name_is_vaild(domain_name):
