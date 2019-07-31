@@ -7,13 +7,14 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/o1806.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/r1806.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/tldselect.css') }}" type="text/css">
 
 
 	<title>typosquat tool</title>
 
 	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 	<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="../static/js/index.js"></script>
 
 </head>
@@ -43,8 +44,20 @@
 					<div class="search-wrap--home">
 						<form id="search_form_homepage" class="search  search--home  js-search-form" name="x" method="POST" action="javascript:;" onsubmit="jeff()">
 							<input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="1" value="" placeholder="Enter a domain... (google.com)">
-							<input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S" />
-							<input id="search_form_input_clear" class="search__clear  empty  js-search-clear" type="button" tabindex="3" value="X" />
+							<!-- <input id="asdf" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="2" value="" placeholder="Enter a "> -->
+							<div class="selectdiv search__tld">
+								<label>
+									<select id="tld_drop_down" class="search__tld" tabindex="2" form="search_form_homepage">
+										<option value=".com">.com</option>
+										<option value=".co">.co</option>
+										<option value=".org">.org</option>
+										<option value=".net">.net</option>
+									</select>
+								</label>
+							</div>
+
+ 							<input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="3" value="S" />
+							<input id="search_form_input_clear" class="search__clear  empty  js-search-clear" type="button" tabindex="4" value="X" />
 							<div id="search_elements_hidden" class="search__hidden  js-search-hidden"></div>
 						</form>
 

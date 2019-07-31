@@ -1,0 +1,156 @@
+/*.search__tld {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-size: 1.1em;
+    font-weight: normal;
+    display: block;
+    width: 5%;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    height: 2.545455em;
+    z-index: 1;
+    position: relative;
+    top: -1px;
+}*/
+
+.search__tld {
+	-webkit-appearance: none;
+-moz-appearance: none;
+-ms-appearance: none;
+-o-appearance: none;
+appearance: none;
+-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+/*font-family: 'ddg-serp-icons' !important;*/
+speak: none;
+font-style: normal;
+font-size: 1.1em;
+font-weight: normal;
+/*font-weight: normal !important;*/
+font-variant: normal;
+text-transform: none;
+text-decoration: none !important;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+min-width: 70px;
+width: 5%;
+display: inline-block;
+cursor: pointer;
+background: transparent;
+    background-color: #DDDDDD;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+text-align: center;
+border: none;
+height: auto;
+line-height: 2.45em;
+position: absolute;
+top: 0;
+bottom: 0;
+right: 2px;
+left: auto;
+margin: auto;
+    margin-top: auto;
+    margin-right: 49px;
+    margin-bottom: auto;
+/*padding: 0 .64em;*/
+z-index: 2;
+outline: none;
+}
+
+
+/* ------------------------------------------------------- */
+ 
+body {
+  background: #f2f2f2;
+}
+
+.selectdiv {
+/*  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 70px;
+  max-width: 320px;
+  height: 2.45em;
+  float: right;
+  min-width: 50px;
+  -ms-word-break: normal;
+  word-break: normal;*/
+    -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  
+  display: block;
+  width: 70px;
+  max-width: 320px;
+  height: auto;
+  float: right;
+  /*margin: 5px 0px;*/
+  padding: 0px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #0ebeff;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+
+.selectdiv:after {
+    content: '\f078';
+    font: normal normal normal 17px/1 FontAwesome;
+    color: #0ebeff;
+    right: 8px;
+    top: -2px;
+    /*height: 34px;*/
+    padding: 15px 0px 0px 8px;
+    /*border-left: 1px solid #0ebeff;*/
+    position: absolute;
+    pointer-events: none;
+}
+
+/* IE11 hide native button (thanks Matt!) */
+select::-ms-expand {
+display: none;
+}
+
+.selectdiv label {
+	float:right;
+}
+
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  
+  display: inline-block;
+  width: 70px;
+  max-width: 320px;
+  height: 100%;
+  float: right;
+  /*margin: 5px 0px;*/
+  padding: 0px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #0ebeff;
+  -ms-word-break: normal;
+  word-break: normal;
+  margin-right: 30px;
+}
+
