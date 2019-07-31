@@ -19,10 +19,11 @@ def result():
     typos = get_similar_domain_names(domain_name)
     augmented_data = []
     for typo in typos:
-        available, valuation = get_domain_information(typo)
+        available, current_price, list_price = get_domain_information(typo)
         augmented_data.append({
             "domainName": typo,
             "available": available,
-            "valuation": valuation
+            "currentPrice": current_price,
+            "listPrice": list_price
         })
     return jsonify(augmented_data)

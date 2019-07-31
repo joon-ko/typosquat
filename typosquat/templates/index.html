@@ -2,7 +2,6 @@
 <html class="no-js" lang="en_US">
 
 <head>
-
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/s1806.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/o1806.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/r1806.css') }}" type="text/css">
@@ -16,7 +15,9 @@
 	<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="../static/js/index.js"></script>
-
+    <div class ="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" style="width:200px;display:block;margin-left:15px;margin-top:15px">
+    </div>
 </head>
 
 <body id="pg-index" class="page-index body--home">
@@ -29,19 +30,16 @@
 	<div class="site-wrapper  site-wrapper--home  js-site-wrapper">
 		<div class="header-wrap--home  js-header-wrap">
 			<div class="header--aside js-header-aside"></div>
-		</div>
-
+        </div>
+        
 		<div id="" class="content-wrap--home">
 			<div id="content_homepage" class="content--home">
 				<div class="cw--c">
 					<div class="logo-wrap--home">
 						<img src="{{ url_for('static', filename='images/KittyLogoNoBack.png') }}" style="width:100px;margin:0 auto;display:block">
-<!-- 						<a id="logo_homepage_link" class="logo_homepage" href="/about">
-							About DuckDuckGo
-							<span class="logo_homepage__tt">Learn More</span>
- -->						</a>
 					</div>
-					<div class="search-wrap--home">
+
+ 					<div class="search-wrap--home">
 						<form id="search_form_homepage" class="search  search--home  js-search-form" name="x" method="POST" action="javascript:;" onsubmit="jeff()">
 							<input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="1" value="" placeholder="Enter a domain... (google.com)">
 							<!-- <input id="asdf" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="2" value="" placeholder="Enter a "> -->
@@ -64,15 +62,10 @@
 						<div class="cw">
 							<div id="links_wrapper" class="serp__results js-serp-results">
 								<div class="results--main">
-									<div id="links" class="results js-results" style="height: 300px; overflow-y:auto;">
-<!-- 										<div class="box">
-										  <div class="loader-03"></div>
-										</div> -->
-									</div>
+									<div id="links" class="results js-results" style="height: 300px; overflow-y:auto;"></div>
 								</div>
 							</div>
 						</div>
-
 					</div>
 
 					<div class="tag-home  tag-home--slide  no-js__hide  js-tag-home"></div>

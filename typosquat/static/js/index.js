@@ -1,4 +1,4 @@
-function setEntry(entry, index, domainName, available, valuation) {
+function setEntry(entry, index, domainName, available, currentPrice, listPrice) {
     actualHref = "http://" + domainName;
     entry.setAttribute("id", "r1-" + String(index));
     entry.setAttribute("class", "result results_links_deep highlight_d result--url-above-snippet");
@@ -50,7 +50,11 @@ function setEntry(entry, index, domainName, available, valuation) {
 
     let resultSnippet = document.createElement('div');
     resultSnippet.setAttribute("class", "result__snippet js-result-snippet");
-    resultSnippet.innerHTML = `Available: ${available}, Valuation: ${valuation}`; // TODO: actually make this
+    console.log(available);
+    let availableSpan = 'Available: ' + ( available === true ? '<span style="color:green">Yes</span>' : '<span style="color:red">No</span>' );
+    let currentPriceSpan = available ? `<span style="color:#3fb54f">${currentPrice}</span>` : '';
+    let listPriceSpan = available ? `<span><s>${listPrice}</s></span>` : '';
+    resultSnippet.innerHTML = availableSpan + ' ' + currentPriceSpan + ' ' + listPriceSpan;
 
     resultBody.appendChild(resultExtras);
     resultBody.appendChild(resultSnippet);
@@ -73,8 +77,8 @@ function jeff() {
             var numDomains = data.length;
             for (var i = 0; i < numDomains; i++) {
                 let result = document.createElement('div');
-                let { domainName, available, valuation } = data[i];
-                setEntry(result, i, domainName, available, valuation);
+                let { domainName, available, currentPrice, listPrice } = data[i];
+                setEntry(result, i, domainName, available, currentPrice, listPrice);
                 resultContainer.appendChild(result);
             }
         })

@@ -4,15 +4,17 @@ import whois
 
 def get_domain_information(domain_name):
     """
-    Returns a tuple (availabile, valuation).
+    Returns a tuple (availabile, current_price, list_price).
     availabile: boolean, whether or not domain name is available
-    valuation: number, price of domain name. None if available is False.
+    current_price: string, current (possibly sale) price of domain name. None if available is False.
+    current_price: string, list price of domain name. None if available is False.
     """
     endpoint = 'https://entourage.prod.aws.godaddy.com/domainsapi/v1/search/exact?q={}'.format(domain_name)
     r = requests.get(endpoint)
     available = r.json()['ExactMatchDomain']['IsAvailable']
-    valuation = r.json()['ExactMatchDomain']['Price'] if available else None
-    return (available, valuation)
+    current_price = r.json()['ExactMatchDomain']['SolutionSet']['CurrentPriceDisplay'] if available else None
+    list_price = r.json()['ExactMatchDomain']['SolutionSet']['ListPriceDisplay'] if available else None
+    return (available, current_price, list_price)
 
 
 def get_domain_availability(domain_name):

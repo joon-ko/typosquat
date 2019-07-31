@@ -1,10 +1,15 @@
+@font-face {
+    font-family: "gdfont";
+    src: url("../fonts/gdfont.OTF"),
+	url("../fonts/gdfont.svg");
+}
 body {
 	//background: #323943;
 	
   background: radial-gradient(ellipse farthest-corner at center bottom, #69d2fb 0%, #20438E 100%) center bottom / 100% fixed;
 	text-align: center;
 	box-sizing: border-box;
-	font-family: sans-serif;
+	font-family: 'gdfont';
 	color: rgba(160, 160, 160, .8);
 	*,
 	*:before,
