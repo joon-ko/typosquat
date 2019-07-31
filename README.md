@@ -1,6 +1,6 @@
 ![](typosquat/static/images/KittyLogoNoBack.png)
 
-# Project Siamese
+![](typosquat/static/images/logo.png)
 
 Siamese lets you explore domain names for awareness and potential prevention of [typosquatting](https://en.wikipedia.org/wiki/Typosquatting). Provide a domain name, and Siamese returns a list of similar domain names that are likely to be used for typosquatting.
 
@@ -17,7 +17,7 @@ All returned domain names come with information on whether or not that domain na
 
 # About
 
-Project Siamese was planned and implemented from start to finish in 24 hours by Team Kittens for GoDaddy's 2019 Intern Week hackathon.
+Project Siamese was planned and implemented from start to finish in one day by Team Kittens for GoDaddy's 2019 Intern Week hackathon.
 
 ## Team Kittens
 
