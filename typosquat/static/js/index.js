@@ -1,4 +1,4 @@
-function setEntry(entry, index, domainName) {
+function setEntry(entry, index, domainName, available, valuation) {
     actualHref = "http://" + domainName;
     entry.setAttribute("id", "r1-" + String(index));
     entry.setAttribute("class", "result results_links_deep highlight_d result--url-above-snippet");
@@ -50,7 +50,7 @@ function setEntry(entry, index, domainName) {
 
     let resultSnippet = document.createElement('div');
     resultSnippet.setAttribute("class", "result__snippet js-result-snippet");
-    resultSnippet.innerHTML = "This domain has not yet been bought."; // TODO: actually make this
+    resultSnippet.innerHTML = `Available: ${available}, Valuation: ${valuation}`; // TODO: actually make this
 
     resultBody.appendChild(resultExtras);
     resultBody.appendChild(resultSnippet);
@@ -65,14 +65,14 @@ function jeff() {
         body: domainName
     }).then(response => {
         response.json().then(data => {
+            console.log(data);
             let resultContainer = document.getElementById('links');
             resultContainer.innerHTML = '';
-            var eachDomainName = data;
-            var numDomains = eachDomainName.length;
+            var numDomains = data.length;
             for (var i = 0; i < numDomains; i++) {
                 let result = document.createElement('div');
-
-                setEntry(result, i, eachDomainName[i]);
+                let { domainName, available, valuation } = data[i];
+                setEntry(result, i, domainName, available, valuation);
                 resultContainer.appendChild(result);
             }
         })

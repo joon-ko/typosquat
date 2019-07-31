@@ -17,13 +17,12 @@ def ping():
 def result():
     domain_name = request.data.decode('utf-8')
     typos = get_similar_domain_names(domain_name)
-    print(typos)
     augmented_data = []
     for typo in typos:
         available, valuation = get_domain_information(typo)
         augmented_data.append({
+            "domainName": typo,
             "available": available,
             "valuation": valuation
         })
-    print(augmented_data)
     return jsonify(augmented_data)
