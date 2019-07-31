@@ -59,6 +59,8 @@ function setEntry(entry, index, domainName, available, valuation) {
 }
 
 function jeff() {
+    let loadingContainer = document.getElementById('links');
+    loadingContainer.innerHTML = '<div class="box"><div class="loader-03"></div></div>';
     let domainName = document.getElementById('search_form_input_homepage').value;
     fetch('/result', {
         method: 'POST',
