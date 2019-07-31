@@ -80,7 +80,7 @@ function jeff() {
     let loadingContainer = document.getElementById('links');
     loadingContainer.innerHTML = '<div class="box"><div class="loader-03"></div></div>';
     let subDomain = document.getElementById('search_form_input_homepage').value;
-    if (isAlphaNumeric(subDomain)) {
+    if (isAlphaNumeric(subDomain) && subDomain.length > 0) {
         console.log("test");
         let tld_drop_down = document.getElementById('tld_drop_down');
         let tld = tld_drop_down.options[0].value;
