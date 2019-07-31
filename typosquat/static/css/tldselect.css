@@ -103,7 +103,7 @@ body {
   color: #333;
   background-color: #ffffff;
   background-image: none;
-  border: 1px solid #0ebeff;
+  border: 1px solid #a9e0b1;
   -ms-word-break: normal;
   word-break: normal;
 }
@@ -111,7 +111,7 @@ body {
 .selectdiv:after {
     content: '\f078';
     font: normal normal normal 17px/1 FontAwesome;
-    color: #0ebeff;
+    color: #3fb54f;
     right: 8px;
     top: -2px;
     /*height: 34px;*/
@@ -148,7 +148,7 @@ display: none;
   color: #333;
   background-color: #ffffff;
   background-image: none;
-  border: 1px solid #0ebeff;
+  border: 1px solid #a9e0b1;
   -ms-word-break: normal;
   word-break: normal;
   margin-right: 30px;
