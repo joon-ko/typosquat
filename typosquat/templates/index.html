@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/s1806.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/o1806.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/r1806.css') }}" type="text/css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}" type="text/css">
+
 
 	<title>typosquat tool</title>
 
@@ -40,7 +42,7 @@
 					</div>
 					<div class="search-wrap--home">
 						<form id="search_form_homepage" class="search  search--home  js-search-form" name="x" method="POST" action="javascript:;" onsubmit="jeff()">
-							<input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="1" value="">
+							<input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="1" value="" placeholder="Enter a domain... (google.com)">
 							<input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S" />
 							<input id="search_form_input_clear" class="search__clear  empty  js-search-clear" type="button" tabindex="3" value="X" />
 							<div id="search_elements_hidden" class="search__hidden  js-search-hidden"></div>
@@ -50,6 +52,9 @@
 							<div id="links_wrapper" class="serp__results js-serp-results">
 								<div class="results--main">
 									<div id="links" class="results js-results" style="height: 300px; overflow-y:auto;">
+<!-- 										<div class="box">
+										  <div class="loader-03"></div>
+										</div> -->
 									</div>
 								</div>
 							</div>
