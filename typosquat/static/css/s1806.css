@@ -1956,7 +1956,7 @@
     .has-suggestions .search__button,.has-suggestions .search__button--hero{
 	border-radius:0 4px 0 0
     }
-    .search:hover .search__button,.search__input:focus ~ .search__button,.search--header.has-text.search--hover .search__button,.search--header.has-text.search--focus .search__button,.search--home.has-text .search__button{
+    .search__input:focus ~ .search__button,.search--header.has-text.search--hover .search__button,.search--header.has-text.search--focus .search__button,.search--home.has-text .search__button{
 	background-color:#3FB54F;color:white
     }
     .search__button:hover,.search__button:focus,.search:hover .search__button:focus,.search--header.has-text.search--hover .search__button:hover,.search--header.has-text.search--focus .search__button:hover,.search--home.has-text .search__button:focus,.search--home.has-text .search__button:hover{
