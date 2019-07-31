@@ -68,7 +68,6 @@ function jeff() {
             let resultContainer = document.getElementById('links');
             resultContainer.innerHTML = '';
             var eachDomainName = data;
-            // var eachDomainName = String(data).split(',');
             var numDomains = eachDomainName.length;
             for (var i = 0; i < numDomains; i++) {
                 let result = document.createElement('div');
@@ -76,9 +75,6 @@ function jeff() {
                 setEntry(result, i, eachDomainName[i]);
                 resultContainer.appendChild(result);
             }
-            // let result = document.createElement('div');
-            // result.innerHTML = data;
-            // resultContainer.appendChild(result);
         })
     });
 }
