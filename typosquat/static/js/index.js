@@ -58,10 +58,12 @@ function setEntry(entry, index, domainName, available, currentPrice, listPrice) 
 
     let resultSnippet = document.createElement('div');
     resultSnippet.setAttribute("class", "result__snippet js-result-snippet");
-    console.log(available);
-    let availableSpan = 'Available: ' + ( available === true ? '<span style="color:green">Yes</span>' : '<span style="color:red">No</span>' );
+    let availableSpan = available === true ? '<span style="color:green">Available</span>' : '<span style="color:red">Not Available</span>';
     let currentPriceSpan = available ? `<span style="color:#3fb54f">${currentPrice}</span>` : '';
-    let listPriceSpan = available ? `<span><s>${listPrice}</s></span>` : '';
+    let listPriceSpan = '';
+    if (listPrice !== null) {
+        listPriceSpan = available ? `<span><s>${listPrice}</s></span>` : '';
+    }
     resultSnippet.innerHTML = availableSpan + ' ' + currentPriceSpan + ' ' + listPriceSpan;
 
     resultBody.appendChild(resultExtras);
@@ -89,7 +91,6 @@ function jeff() {
     loadingContainer.innerHTML = '<div class="box"><div class="loader-03"></div></div>';
     let subDomain = document.getElementById('search_form_input_homepage').value;
     if (isAlphaNumeric(subDomain) && subDomain.length > 0) {
-        console.log("test");
         let tld_drop_down = document.getElementById('tld_drop_down');
         let tld = tld_drop_down.options[0].value;
         if (tld_drop_down.selectedIndex !== -1) {
@@ -101,7 +102,6 @@ function jeff() {
             body: domainName
         }).then(response => {
             response.json().then(data => {
-                console.log(data);
                 let resultContainer = document.getElementById('links');
                 resultContainer.innerHTML = '';
                 var numDomains = data.length;

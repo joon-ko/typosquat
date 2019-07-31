@@ -1,3 +1,5 @@
+from multiprocessing import Process, Manager
+
 from flask import Flask
 from flask import render_template
 from flask import jsonify
@@ -17,13 +19,22 @@ def ping():
 def result():
     domain_name = request.data.decode('utf-8')
     typos = get_similar_domain_names(domain_name)
-    augmented_data = []
-    for typo in typos:
-        available, current_price, list_price = get_domain_information(typo)
-        augmented_data.append({
-            "domainName": typo,
-            "available": available,
-            "currentPrice": current_price,
-            "listPrice": list_price
-        })
-    return jsonify(augmented_data)
+    with Manager() as manager:
+        augmented_data = manager.list()
+        processes = []
+        for typo in typos:
+            p = Process(target=append_domain_information, args=(augmented_data,typo))
+            p.start()
+            processes.append(p)
+        for p in processes:
+            p.join()
+        return jsonify(list(augmented_data))
+
+def append_domain_information(data, typo):
+    available, current_price, list_price = get_domain_information(typo)
+    data.append({
+        "domainName": typo,
+        "available": available,
+        "currentPrice": current_price,
+        "listPrice": list_price
+    })

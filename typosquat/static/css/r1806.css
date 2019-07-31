@@ -3,6 +3,12 @@
 	src: url("../fonts/gdfont.OTF"),
 	url("../fonts/gdfont.svg");
 }
+#links {
+	margin-top: 20px;
+}
+#links_wrapper {
+	padding: 0px 0px;
+}
 .tile__check{
 	-webkit-transition:all .3s ease-in-out;-	webkit-transition-delay:0s;-moz-transition:all .3s ease-in-out 0s;-o-transition:all .3s ease-in-out 0s;transition:all .3s ease-in-out 0s
 	}
@@ -2187,12 +2193,6 @@
 	.lt-ie9 .detail--l .detail__media,.detail--l .lt-ie9 .detail__media,.lt-ie9 .detail--products .detail__media,.detail--products .lt-ie9 .detail__media,.lt-ie9 .detail--qa .detail__media,.detail--qa .lt-ie9 .detail__media,.lt-ie9 .detail--about .detail__media,.detail--about .lt-ie9 .detail__media{
 	background:none
 	}
-	.result{
-	-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-font-smoothing:subpixel-antialiased;-webkit-tap-highlight-color:rgba(0,0,0,0);margin-bottom:1.2em;position:relative;word-wrap:break-word;border-top:1px solid transparent;border-bottom:1px solid transparent;
-	}
-    .result:hover{
-        border-top:1px solid;border-bottom:1px solid;bottom-left:none solid;bottom-right:none solid;border-color:#AAAAAA;background-color:#EEEEEE;
-    }
 	.result.highlight{
 	border-color:#e5e5e5
 	}

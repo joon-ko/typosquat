@@ -203,7 +203,7 @@
 	position:absolute;margin:auto;width:100%;top:24%;left:0;right:0;z-index:12
 	}
 	.logo-wrap--home{
-	position:relative;display:block;max-width:300px;margin:auto;margin-bottom:.8em;margin-top:-1.25em
+	position:relative;display:block;max-width:300px;margin:auto;margin-bottom:25px;margin-top:-1.25em
 	}
 	@media only screen and (max-width: 425px){
 	.logo-wrap--home{
@@ -218,7 +218,7 @@
 
 	}
 	.search-wrap--home{
-	padding:1.3em .8em 1em;max-width:590px;margin-left:auto;margin-right:auto;display:block;float:none;width:100%
+	padding:0em .8em 1em;max-width:590px;margin-left:auto;margin-right:auto;display:block;float:none;width:100%
 	}
 	@media only screen and (max-width: 590px){
 	.search-wrap--home{

@@ -3,8 +3,18 @@
     src: url("../fonts/gdfont.OTF"),
 	url("../fonts/gdfont.svg");
 }
+.result{
+-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-font-smoothing:subpixel-antialiased;-webkit-tap-highlight-color:rgba(0,0,0,0);margin-bottom:1.2em;position:relative;word-wrap:break-word;border-top:1px solid transparent;border-bottom:1px solid transparent;
+}
+.result:hover{
+    margin-left:50px;margin-right:50px;border-top:1px solid;border-bottom:1px solid;bottom-left:none solid;bottom-right:none solid;border-color:#AAAAAA;background-color:#EEEEEE;
+}
+.result__body.links_main.links_deep {
+	background-color: #f0f0f0;
+	margin-left: 50px;
+	margin-right: 50px;
+}
 body {
-	//background: #323943;
 	
   background: radial-gradient(ellipse farthest-corner at center bottom, #69d2fb 0%, #20438E 100%) center bottom / 100% fixed;
 	text-align: center;
@@ -20,6 +30,7 @@ body {
 		opacity: .5;
 	}
 }
+
 
 .box {
 	display: inline-block;
