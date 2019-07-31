@@ -65,7 +65,13 @@ function setEntry(entry, index, domainName, available, currentPrice, listPrice) 
 function jeff() {
     let loadingContainer = document.getElementById('links');
     loadingContainer.innerHTML = '<div class="box"><div class="loader-03"></div></div>';
-    let domainName = document.getElementById('search_form_input_homepage').value;
+    let subDomain = document.getElementById('search_form_input_homepage').value;
+    let tld_drop_down = document.getElementById('tld_drop_down');
+    let tld = tld_drop_down.options[0].value;
+    if (tld_drop_down.selectedIndex !== -1) {
+        tld = tld_drop_down.options[tld_drop_down.selectedIndex].value;
+    }
+    let domainName = subDomain + tld;
     fetch('/result', {
         method: 'POST',
         body: domainName
