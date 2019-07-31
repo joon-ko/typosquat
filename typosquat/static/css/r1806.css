@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "gdfont";
+	src: url("../fonts/gdfont.OTF"),
+	url("../fonts/gdfont.svg");
+}
 .tile__check{
-	-webkit-transition:all .3s ease-in-out;-webkit-transition-delay:0s;-moz-transition:all .3s ease-in-out 0s;-o-transition:all .3s ease-in-out 0s;transition:all .3s ease-in-out 0s
+	-webkit-transition:all .3s ease-in-out;-	webkit-transition-delay:0s;-moz-transition:all .3s ease-in-out 0s;-o-transition:all .3s ease-in-out 0s;transition:all .3s ease-in-out 0s
 	}
 	.c-info,.c-base,.c-icon,.c-list,.c-product,.c-detail,.zci__main.has-aux,.zci__main--answer,.results--main,.forecast-wrapper .module--forecast .module__detail--hours__labels,.zcm-wrap--header{
 	max-width:590px
@@ -6152,7 +6157,7 @@
 	position:absolute;right:10px;top:66px;width:48px;height:34px;background-size:42px 28px
 	}
 	.map-type-select__label{
-	position:absolute;bottom:7px;left:10px;font-size:13px;font-weight:600;font-family:"DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.25)
+	position:absolute;bottom:7px;left:10px;font-size:13px;font-weight:600;font-family:"gdfont","DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.25)
 	}
 	.tx--bold{
 	font-weight:600
@@ -7514,7 +7519,7 @@
 	display:block;vertical-align:initial;margin:0
 	}
 	.vertical--map__search-this-area{
-	background:#fff;border:1px solid rgba(0,0,0,0.15);box-shadow:0 2px 6px 0 rgba(0,0,0,0.3);color:#2778dc;font-weight:bold;font-size:14px;font-family:"DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif
+	background:#fff;border:1px solid rgba(0,0,0,0.15);box-shadow:0 2px 6px 0 rgba(0,0,0,0.3);color:#2778dc;font-weight:bold;font-size:14px;font-family:"gdfont","DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif
 	}
 	.vertical--map__search-this-area:hover,.vertical--map__search-this-area:active,.vertical--map__search-this-area:focus{
 	background:#fafafa;color:#2778dc
