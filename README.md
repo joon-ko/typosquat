@@ -10,7 +10,7 @@ All returned domain names come with information on whether or not that domain na
 
 # Running locally
 
-0. Ensure you have `python3` and `pip` installed.
+0. Ensure you have `python3` and `pip` installed. Also install the [chromedriver](https://chromedriver.chromium.org/downloads) executable somewhere in your `$PATH`.
 1. Clone and `cd` into this repository.
 2. `./run.sh`
 3. View locally at [http://localhost:5000/](http://localhost:5000/).
