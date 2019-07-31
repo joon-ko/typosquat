@@ -2212,7 +2212,7 @@
 	white-space:nowrap;overflow:hidden;-ms-text-overflow:ellipsis;-o-text-overflow:ellipsis;text-overflow:ellipsis;max-width:550px;height:1.5em
 	}
 	.result__a{
-	vertical-align:middle;display:inline-block;max-width:100%;color:#00278e
+	vertical-align:middle;display:inline-block;max-width:100%;color:#00278e;cursor:pointer;
 	}
 	.highlight .result__a,.highlight .result__a:hover{
 	color:#00278e

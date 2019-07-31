@@ -1,5 +1,5 @@
 function setEntry(entry, index, domainName, available, currentPrice, listPrice) {
-    actualHref = "https://www.godaddy.com/domainsearch/find?domainToCheck=" + domainName;
+    let gdDomainLink = "https://www.godaddy.com/domainsearch/find?domainToCheck=" + domainName.toLowerCase();
     entry.setAttribute("id", "r1-" + String(index));
     entry.setAttribute("class", "result results_links_deep highlight_d result--url-above-snippet");
     entry.setAttribute("data-domain", domainName);
@@ -15,7 +15,16 @@ function setEntry(entry, index, domainName, available, currentPrice, listPrice) 
     let resultA = document.createElement('a');
     resultA.setAttribute("class", "result__a");
     resultA.setAttribute("rel", "noopener");
-    resultA.setAttribute("href", actualHref);
+    resultA.onclick=function() {let win = window.open(gdDomainLink, '_blank');
+        if (win) {
+            //Browser has allowed it to be opened
+            win.focus();
+        } else {
+            //Browser has blocked it
+            alert('Please allow popups for this website');
+        }
+    }
+
     resultA.innerHTML = domainName;
     resultTitle.appendChild(resultA);
     resultBody.appendChild(resultTitle);
@@ -30,7 +39,6 @@ function setEntry(entry, index, domainName, available, currentPrice, listPrice) 
     // resultIcon.setAttribute("class", "result__icon");
 
     let resultHref = document.createElement('a');
-    resultHref.setAttribute("href", actualHref);
     resultHref.setAttribute("rel", "noopener");
     resultHref.setAttribute("class", "result__url js-result-extras-url");
 
