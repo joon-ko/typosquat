@@ -8,7 +8,7 @@ def get_domain_information(domain_name):
     availabile: boolean, whether or not domain name is available
     valuation: number, price of domain name. None if available is False.
     """
-    endpoint = 'https://entourage.dev.aws.godaddy.com/domainsapi/v1/search/exact?q={}'.format(domain_name)
+    endpoint = 'https://entourage.prod.aws.godaddy.com/domainsapi/v1/search/exact?q={}'.format(domain_name)
     r = requests.get(endpoint)
     available = r.json()['ExactMatchDomain']['IsAvailable']
     valuation = r.json()['ExactMatchDomain']['Price'] if available else None
