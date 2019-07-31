@@ -22,4 +22,8 @@ def get_similarity_score(substitutions):
 			print("score for ", char, " and ", other_char, "is ", abs(hash - otherhash))
 			scores[(char, other_char)] = abs(hash - otherhash)
 			scores[(other_char, char)] = abs(hash - otherhash)
+	
+	max_score = max(scores.values())
+	for score in scores:
+		scores[score] = 1 - scores[score]/max_score
 	return scores
