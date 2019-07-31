@@ -9,7 +9,7 @@ substitutions = {
 	"e": ["o"],
 	"l": ["I", "1"],
 	"m": ["rn", "n"],
-	"t": ["l"],
+	"t": ["l", "f"],
 	"u": ["v"],
 	"w": ["vv", "v"],
 }
@@ -23,7 +23,7 @@ def get_similarity_score(substitutions):
 			scores[(other_char, char)] = []
 			for font in fonts:
 				hash = imagehash.average_hash(Image.open('text_images/{}.png'.format(char + str(font))))
-				otherhash = imagehash.average_hash(Image.open('text_images/{}.png'.format(other_char)))
+				otherhash = imagehash.average_hash(Image.open('text_images/{}.png'.format(other_char + str(font))))
 				print("score for ", char, " and ", other_char, "is ", abs(hash - otherhash), " for the font ", font)
 				scores[(char, other_char)].append(abs(hash - otherhash))
 				scores[(other_char, char)].append(abs(hash - otherhash))
@@ -35,3 +35,4 @@ def get_similarity_score(substitutions):
 		# we want to normalize the scores to fit between .5 and 1
 		scores[score] = 1 - scores[score]/max_score/2
 	return scores
+print(get_similarity_score(substitutions))
