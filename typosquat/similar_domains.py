@@ -13,7 +13,7 @@ words = set(x.strip().lower() for x in open("/usr/share/dict/words").readlines()
 words -= set("bcdefghjklmnopqrtvwxyz")
 words -= set(("ex", "rs", "ra", "frobnicate"))
 
-common_typos = json.loads(open('../typos.json').read())
+common_typos = json.loads(open('typosquat/typos.json').read())
 
 def get_similar_domain_names(domain_name):
 	# if not check_domain_name_is_vaild(domain_name):
