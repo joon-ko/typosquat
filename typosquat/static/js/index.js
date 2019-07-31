@@ -1,5 +1,5 @@
 function setEntry(entry, index, domainName, available, currentPrice, listPrice) {
-    actualHref = "http://" + domainName;
+    actualHref = "https://www.godaddy.com/domainsearch/find?domainToCheck=" + domainName;
     entry.setAttribute("id", "r1-" + String(index));
     entry.setAttribute("class", "result results_links_deep highlight_d result--url-above-snippet");
     entry.setAttribute("data-domain", domainName);
