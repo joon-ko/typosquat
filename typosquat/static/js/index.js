@@ -1,4 +1,5 @@
 function setEntry(entry, index, domainName) {
+    actualHref = "http://" + domainName;
     entry.setAttribute("id", "r1-" + String(index));
     entry.setAttribute("class", "result results_links_deep highlight_d result--url-above-snippet");
     entry.setAttribute("data-domain", domainName);
@@ -14,7 +15,7 @@ function setEntry(entry, index, domainName) {
     let resultA = document.createElement('a');
     resultA.setAttribute("class", "result__a");
     resultA.setAttribute("rel", "noopener");
-    resultA.setAttribute("href", domainName);
+    resultA.setAttribute("href", actualHref);
     resultA.innerHTML = domainName;
     resultTitle.appendChild(resultA);
     resultBody.appendChild(resultTitle);
@@ -29,7 +30,7 @@ function setEntry(entry, index, domainName) {
     // resultIcon.setAttribute("class", "result__icon");
 
     let resultHref = document.createElement('a');
-    resultHref.setAttribute("href", domainName);
+    resultHref.setAttribute("href", actualHref);
     resultHref.setAttribute("rel", "noopener");
     resultHref.setAttribute("class", "result__url js-result-extras-url");
 
