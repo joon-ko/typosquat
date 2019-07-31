@@ -61,7 +61,7 @@ def get_similar_domain_names(domain_name):
 		for sub in tld_substitutions[tld]:
 			similar_domain_names[name + "." + sub] = .5
 	#return similar_domain_names
-	return sorted(similar_domain_names, key=similar_domain_names.get, reverse=True)
+	return sorted(similar_domain_names, key=similar_domain_names.get, reverse=True)[:10]
 
 
 def find_and_replace_all_occurrences(name, tld, prev_substring, new_substring):
